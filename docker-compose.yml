@@ -18,7 +18,7 @@ services:
     ports:
       - "9000:9000"
     volumes:
-      - ./www/:/var/www/html/
+      - ./www:/var/www/html:cached
       - ./conf/php/php.ini:/usr/local/php/php.ini:ro
       - ./conf/php/php-fpm.d/www.conf:/usr/local/etc/php-fpm.d/www.conf:ro
       - ./log/php-fpm/:/var/log/php-fpm/

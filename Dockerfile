@@ -1,3 +1,8 @@
-FROM php:7-fpm
+FROM php:7-fpm-alpine
 
-RUN docker-php-ext-install pdo_mysql
+COPY composer.sh /composer.sh
+
+RUN chmod +x /composer.sh && /composer.sh
+
+RUN docker-php-ext-install bcmath \
+                            pdo_mysql \
